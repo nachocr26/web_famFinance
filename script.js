@@ -1,6 +1,6 @@
 /**
  * FamFinance P2P — Interactive Landing Page Script
- * Features: Dynamic Navbar, Live Calculator, Screenshot Tabs, FAQ Accordion, Mobile Menu
+ * Features: Dynamic Navbar, Screenshot Tabs, FAQ Accordion, Contact Form, Mobile Menu
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -63,40 +63,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Interactive Savings Calculator
-  const budgetSlider = document.getElementById('calcBudget');
-  const membersSlider = document.getElementById('calcMembers');
-  const budgetValue = document.getElementById('budgetValue');
-  const membersValue = document.getElementById('membersValue');
-  const resultAmount = document.getElementById('calcResultAmount');
-  const resultSubs = document.getElementById('calcSubsSaved');
-  const resultHours = document.getElementById('calcHoursSaved');
+  // 4. Contact Form Handler (Envia email a nachocr26@gmail.com)
+  const contactForm = document.getElementById('contactForm');
+  const contactSuccess = document.getElementById('contactSuccess');
+  const contactError = document.getElementById('contactError');
+  const btnSubmit = document.getElementById('btnSubmitContact');
 
-  function updateCalculator() {
-    if (!budgetSlider || !membersSlider || !resultAmount) return;
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      if (btnSubmit) {
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = '<span>Enviando mensaje...</span>';
+      }
 
-    const monthlyExpense = parseFloat(budgetSlider.value) || 2400;
-    const members = parseInt(membersSlider.value, 10) || 3;
+      const formData = new FormData(contactForm);
 
-    if (budgetValue) budgetValue.textContent = `${monthlyExpense.toLocaleString('es-ES')} €`;
-    if (membersValue) membersValue.textContent = `${members} ${members === 1 ? 'persona' : 'personas'}`;
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/nachocr26@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json'
+          },
+          body: formData
+        });
 
-    // Calculation model:
-    // FamFinance collaborative tracking & budget alerts historically improves household net savings by 7% - 10%.
-    // Base estimated annual optimization = monthlyExpense * 12 * 0.085
-    const annualSavings = Math.round(monthlyExpense * 12 * 0.085);
-    const subsSaved = 59.99 * Math.max(1, Math.round(members / 2)); // Annual subscription cost avoided
-    const hoursSaved = Math.round(members * 18); // Time saved with automatic notifications vs manual spreadsheets
-
-    resultAmount.textContent = `${annualSavings.toLocaleString('es-ES')} €`;
-    if (resultSubs) resultSubs.textContent = `+${Math.round(subsSaved)} € en suscripciones evitadas`;
-    if (resultHours) resultHours.textContent = `${hoursSaved} horas/año ahorradas`;
-  }
-
-  if (budgetSlider && membersSlider) {
-    budgetSlider.addEventListener('input', updateCalculator);
-    membersSlider.addEventListener('input', updateCalculator);
-    updateCalculator(); // Initialize on load
+        if (response.ok) {
+          if (contactSuccess) {
+            contactSuccess.style.display = 'block';
+            contactSuccess.textContent = '¡Gracias por tu mensaje! Se ha enviado correctamente a nachocr26@gmail.com. Te responderé lo antes posible.';
+          }
+          if (contactError) contactError.style.display = 'none';
+          contactForm.reset();
+        } else {
+          throw new Error('Error en el servidor al enviar');
+        }
+      } catch (err) {
+        // En caso de fallo con AJAX, enviar por método tradicional directo
+        contactForm.submit();
+      } finally {
+        if (btnSubmit) {
+          btnSubmit.disabled = false;
+          btnSubmit.innerHTML = '<span>Enviar Mensaje</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
+        }
+      }
+    });
   }
 
   // 5. FAQ Accordion

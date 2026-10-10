@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Política de Privacidad — FamFinance P2P</title>
-  <meta name="description" content="Política de Privacidad oficial de FamFinance P2P. Gestión financiera familiar con arquitectura Zero-Server, cifrado de extremo a extremo y máxima privacidad." />
+  <meta name="description" content="Política de Privacidad oficial de FamFinance P2P. Conforme al RGPD de la UE, LOPD-GDD y Políticas de Google Play." />
   <link rel="icon" type="image/png" href="assets/icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
     .legal-container {
       max-width: 860px;
       margin: 0 auto;
-      padding: 8rem 1.5rem 5rem 1.5rem;
+      padding: 7.5rem 1.5rem 5rem 1.5rem;
     }
     .legal-card {
       background: var(--bg-card);
@@ -34,6 +34,14 @@
       margin-bottom: 2rem;
       display: inline-block;
     }
+    .legal-highlight-box {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      color: var(--text-primary);
+    }
     .legal-section {
       margin-top: 2rem;
       border-top: 1px solid var(--border-subtle);
@@ -41,8 +49,14 @@
     }
     .legal-section h2 {
       font-size: 1.35rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
       color: var(--text-white);
+    }
+    .legal-section h3 {
+      font-size: 1.05rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.4rem;
+      color: var(--emerald-light);
     }
     .legal-section p, .legal-section li {
       color: var(--text-secondary);
@@ -51,7 +65,8 @@
       margin-bottom: 0.75rem;
     }
     .legal-section ul {
-      padding-left: 1.25rem;
+      padding-left: 1.35rem;
+      margin-bottom: 1rem;
     }
     .btn-back {
       display: inline-flex;
@@ -60,6 +75,13 @@
       color: var(--emerald-light);
       font-weight: 700;
       margin-bottom: 1.5rem;
+    }
+    .legal-contact-box {
+      background: rgba(7, 10, 18, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-top: 1rem;
     }
   </style>
 </head>
@@ -72,46 +94,99 @@
   <div class="legal-container">
     <a href="index.html" class="btn-back">← Volver a la página principal</a>
     <div class="legal-card">
-      <div class="section-badge">Compromiso Ético 100% Zero-Server</div>
+      <div class="section-badge">Privacidad y Protección de Datos</div>
       <h1>Política de Privacidad</h1>
-      <span class="legal-date">Última actualización: Octubre de 2026</span>
+      <span class="legal-date">FamFinance P2P · Última actualización: Octubre de 2026</span>
 
-      <p style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 1.5rem;">
-        En <strong>FamFinance P2P</strong>, la privacidad no es un añadido opcional; es el cimiento absoluto sobre el que está construida toda la arquitectura de la aplicación.
-      </p>
-
-      <div class="legal-section">
-        <h2>1. Principio Fundamental: Cero Servidores Centrales</h2>
-        <p>FamFinance P2P opera bajo una filosofía <strong>Local-First y Peer-to-Peer estricta</strong>. No disponemos de servidores centrales, bases de datos en la nube ni sistemas de recopilación de perfiles comerciales. Todos tus registros de gastos, ingresos, presupuestos y justificantes residen físicamente y de forma exclusiva en el almacenamiento interno de tus dispositivos.</p>
+      <div class="legal-section" style="border-top: none; padding-top: 0; margin-top: 0;">
+        <h2>1. Introducción y Compromiso de Privacidad</h2>
+        <p>
+          En <strong>FamFinance P2P</strong> (en adelante, "la Aplicación"), la privacidad y confidencialidad de tus datos económicos y personales constituyen el núcleo fundamental de nuestra arquitectura técnica.
+        </p>
+        <div class="legal-highlight-box">
+          <p>
+            <strong>🔒 Principio Fundamental "Zero-Server":</strong> FamFinance <strong>no almacena tus datos financieros en servidores centrales en la nube</strong> ni los transmite a bases de datos de nuestra propiedad. Tus registros contables pertenecen única y exclusivamente a los dispositivos de tu núcleo familiar.
+          </p>
+        </div>
+        <p>
+          Esta Política de Privacidad describe de manera transparente el tratamiento de la información cuando utilizas nuestra aplicación móvil para Android, conforme al <strong>Reglamento General de Protección de Datos (RGPD) de la Unión Europea</strong>, la <strong>Ley Orgánica 3/2018 (LOPD-GDD)</strong> de España y las <strong>Políticas de Desarrollador de Google Play</strong>.
+        </p>
       </div>
 
       <div class="legal-section">
-        <h2>2. Cifrado de Extremo a Extremo (E2EE)</h2>
-        <p>Cualquier dato transmitido entre los dispositivos de tu familia se cifra previamente mediante criptografía militar <strong>AES-GCM de 256 bits</strong> con derivación de clave <strong>PBKDF2 (100.000 rondas con HMAC-SHA-256)</strong>. Ni los proveedores de telecomunicaciones ni los relevos de red pueden leer o interpretar el contenido de tus paquetes financieros.</p>
-      </div>
-
-      <div class="legal-section">
-        <h2>3. Sincronización en Red Local y Relays Nostr</h2>
+        <h2>2. Datos Tratados y Arquitectura de Cero Conocimiento</h2>
+        <p>La Aplicación procesa las siguientes categorías de datos estrictamente en tu propio dispositivo:</p>
         <ul>
-          <li><strong>En casa (Wi-Fi):</strong> La sincronización se realiza mediante conexión directa móvil a móvil (WebRTC DataChannels) sin salir a internet.</li>
-          <li><strong>Fuera de casa (4G/5G):</strong> Se utilizan relays públicos descentralizados del protocolo Nostr mediante paquetes anónimos y cifrados con identificadores ciegos (SHA-256).</li>
+          <li><strong>Registros Financieros Personales:</strong> Ingresos, gastos, categorías, presupuestos, metas de ahorro, notas de voz transcritas y cuentas bancarias agregadas manualmente o mediante extracto.</li>
+          <li><strong>Identificadores de Dispositivo Criptográficos:</strong> Un identificador aleatorio de instalación (UUID generado localmente mediante WebCrypto API) para la derivación de licencias y sincronización entre dispositivos.</li>
+          <li><strong>Claves de Cifrado E2EE:</strong> La clave de cifrado familiar se deriva localmente mediante PBKDF2 (100.000 iteraciones HMAC-SHA-256) a partir de tu frase de recuperación. Estas claves jamás se transmiten a terceros sin cifrar.</li>
         </ul>
       </div>
 
       <div class="legal-section">
-        <h2>4. Gestión de Cuentas e Importación de Extractos</h2>
-        <p>FamFinance permite importar extractos bancarios en formatos abiertos (Excel / CSV) o registrar movimientos mediante notas de voz y fotos de tickets. Todo el procesamiento y parseo de transacciones se realiza de forma estrictamente local en el dispositivo del usuario. FamFinance nunca solicita credenciales de acceso bancario ni se conecta a pasarelas bancarias externas de terceros.</p>
+        <h2>3. Permisos Solicitados en Android y Finalidad</h2>
+        <p>Para su correcto funcionamiento, FamFinance solicita los siguientes permisos en tu dispositivo:</p>
+        
+        <h3>A. Cámara (android.permission.CAMERA)</h3>
+        <p>
+          <strong>Finalidad:</strong> Permite escanear el código QR de invitación familiar generado por otro miembro de tu hogar para enlazar ambos dispositivos.<br />
+          <em>Garantía:</em> El flujo de la cámara se analiza en tiempo real en la memoria volátil del dispositivo; ninguna fotografía ni vídeo se graba, almacena o envía a ningún servidor.
+        </p>
+
+        <h3>B. Micrófono (android.permission.RECORD_AUDIO)</h3>
+        <p>
+          <strong>Finalidad:</strong> Permite la grabación de notas de voz opcionales para describir y categorizar gastos rápidamente.<br />
+          <em>Garantía:</em> El audio se procesa en el dispositivo y no se comparte con servicios externos de analítica.
+        </p>
+
+        <h3>C. Biometría y Huella Dactilar (USE_BIOMETRIC / USE_FINGERPRINT)</h3>
+        <p>
+          <strong>Finalidad:</strong> Permite proteger el acceso a la app mediante el sensor biométrico del teléfono.<br />
+          <em>Garantía:</em> La autenticación la realiza el propio hardware seguro de Android (BiometricPrompt / KeyStore). La Aplicación nunca tiene acceso a tu huella ni a tus datos biométricos.
+        </p>
+
+        <h3>D. Acceso a Internet y Facturación (INTERNET / BILLING)</h3>
+        <p>
+          <strong>Finalidad:</strong> Utilizado para la sincronización P2P directa entre móviles (WebRTC / red Nostr cifrada) y para procesar la compra opcional de la versión Pro sin anuncios a través de Google Play Billing.
+        </p>
       </div>
 
       <div class="legal-section">
-        <h2>5. Protocolo de Salida y Borrado a Cero (Zero-Wipe)</h2>
-        <p>Si un miembro decide abandonar el grupo familiar o el Titular revoca su acceso, se ejecuta de forma automática el protocolo de borrado completo de credenciales y base contable en el dispositivo revocado, devolviendo la app a su estado inicial independiente.</p>
+        <h2>4. Publicidad y Proveedores Externos (Google AdMob)</h2>
+        <p>
+          En su versión gratuita, FamFinance muestra anuncios publicitarios gestionados por <strong>Google AdMob</strong> (Google LLC):
+        </p>
+        <ul>
+          <li>Google AdMob puede recopilar y procesar identificadores de publicidad del dispositivo (Google Advertising ID / GAID), dirección IP, datos de diagnóstico de rendimiento e interacciones con el anuncio para la entrega y medición de publicidad conforme a las <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" style="color: var(--emerald-light); text-decoration: underline;">Políticas de Privacidad de Google</a>.</li>
+          <li><strong>Versión Pro Sin Anuncios:</strong> La compra integrada de FamFinance Pro desactiva por completo el SDK de Google AdMob y la visualización de publicidad para el usuario y su grupo familiar.</li>
+        </ul>
       </div>
 
       <div class="legal-section">
-        <h2>6. Contacto y Transparencia</h2>
-        <p>FamFinance P2P es una herramienta pensada para devolver la soberanía financiera a los hogares. Si tienes dudas o sugerencias sobre la privacidad de la aplicación, puedes abrir una consulta en nuestro repositorio oficial.</p>
+        <h2>5. Derecho al Olvido y Protocolo de Borrado a Cero</h2>
+        <p>Dado que los datos residen en tu propio dispositivo, tienes el control absoluto sobre ellos en todo momento:</p>
+        <ul>
+          <li><strong>Borrado Completo Inmediato:</strong> En cualquier momento puedes pulsar en <em>Ajustes &gt; Avanzado &gt; "Borrar todos los datos y reiniciar a 0"</em>. Esta acción purga instantáneamente la base de datos local, destruye las claves criptográficas y restablece la app a su estado inicial.</li>
+          <li><strong>Expulsión o Abandono Familiar:</strong> Cuando un miembro abandona o es expulsado del grupo familiar, el protocolo de la app ejecuta un formateo automático a 0 de su copia local, desvinculando el dispositivo para siempre.</li>
+          <li><strong>Exportación y Portabilidad:</strong> Puedes exportar todos tus movimientos en formatos abiertos universales (JSON cifrado, Excel .xlsx o CSV) en cualquier momento sin restricciones.</li>
+        </ul>
       </div>
+
+      <div class="legal-section">
+        <h2>6. Contacto del Responsable</h2>
+        <p>
+          Para cualquier duda, consulta o ejercicio de derechos en materia de privacidad y protección de datos referente a FamFinance P2P, puedes ponerte en contacto directamente con el desarrollador:
+        </p>
+        <div class="legal-contact-box">
+          <p style="margin-bottom: 0;">
+            📧 <strong>Correo de soporte y contacto:</strong> <a href="mailto:nachocr26@gmail.com" style="color: var(--emerald-light); font-weight: 700;">nachocr26@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 2.5rem;">
+        &copy; 2026 FamFinance P2P. Todos los derechos reservados. Diseñado para la máxima soberanía y privacidad financiera.
+      </p>
     </div>
   </div>
 </body>

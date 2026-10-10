@@ -52,7 +52,7 @@
           <li><a href="#caracteristicas" class="nav-link">Características</a></li>
           <li><a href="#comparativa" class="nav-link">Por qué P2P</a></li>
           <li><a href="#capturas" class="nav-link">Galería Real</a></li>
-          <li><a href="#calculadora" class="nav-link">Calculadora</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
           <li><a href="#seguridad" class="nav-link">Criptografía</a></li>
           <li><a href="#faq" class="nav-link">Preguntas</a></li>
         </ul>
@@ -369,54 +369,64 @@
       </div>
     </section>
 
-    <!-- INTERACTIVE SAVINGS CALCULATOR -->
-    <section class="calculator-section" id="calculadora">
+    <!-- CONTACT FORM SECTION -->
+    <section class="contact-section" id="contacto">
       <div class="container">
         <div class="section-header">
-          <div class="section-badge purple">Simulador Interactivo</div>
-          <h2 class="section-title">¿Cuánto ahorra tu familia con <span class="gradient-text">FamFinance</span>?</h2>
+          <div class="section-badge purple">Contacto Directo</div>
+          <h2 class="section-title">¿Tienes dudas o sugerencias? <span class="gradient-text">Escríbeme</span></h2>
           <p class="section-subtitle">
-            Al tener visibilidad en tiempo real de los gastos comunes y presupuestos preventivos, los hogares reducen compras innecesarias y ahorran cientos de euros al año.
+            Puedes enviar un mensaje directo mediante este formulario o escribir a <strong>nachocr26@gmail.com</strong>. Te responderé lo antes posible.
           </p>
         </div>
 
-        <div class="calculator-card">
-          <div class="calc-grid">
-            <div class="calc-inputs">
-              <!-- Slider 1 -->
-              <div class="calc-control">
-                <div class="calc-label">
-                  <span>Gasto mensual aproximado del hogar:</span>
-                  <span id="budgetValue">2.400 €</span>
-                </div>
-                <input type="range" id="calcBudget" min="800" max="6000" step="100" value="2400" aria-label="Gasto mensual del hogar" />
+        <div class="contact-card">
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/nachocr26@gmail.com" method="POST">
+            <!-- Hidden configuration for FormSubmit -->
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde la Web de FamFinance" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Nombre o Alias *</label>
+                <input type="text" id="contactName" name="name" class="form-input" placeholder="Tu nombre" required />
               </div>
 
-              <!-- Slider 2 -->
-              <div class="calc-control">
-                <div class="calc-label">
-                  <span>Miembros en la familia / hogar:</span>
-                  <span id="membersValue">3 personas</span>
-                </div>
-                <input type="range" id="calcMembers" min="1" max="6" step="1" value="3" aria-label="Miembros de la familia" />
-              </div>
-
-              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">
-                * Estimación basada en una reducción media del 8.5% en gastos no planificados gracias a presupuestos compartidos y eliminación de cuotas de suscripción de apps comerciales.
-              </p>
-            </div>
-
-            <div class="calc-result-box">
-              <span class="calc-result-title">Ahorro anual neto estimado</span>
-              <div class="calc-big-number" id="calcResultAmount">2.448 €</div>
-              <p>Dinero que permanece en el bolsillo de tu hogar cada año.</p>
-
-              <div class="calc-badge-row">
-                <span class="calc-badge" id="calcSubsSaved">+60 € en suscripciones evitadas</span>
-                <span class="calc-badge" id="calcHoursSaved">54 horas/año ahorradas</span>
-                <span class="calc-badge">0 datos vendidos</span>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Tu Correo Electrónico *</label>
+                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="tunombre@ejemplo.com" required />
               </div>
             </div>
+
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Motivo de la consulta</label>
+              <select id="contactSubject" name="subject" class="form-select">
+                <option value="Duda general sobre FamFinance">Duda general sobre FamFinance</option>
+                <option value="Sugerencia de nueva funcionalidad">Sugerencia de nueva funcionalidad</option>
+                <option value="Pregunta sobre privacidad o seguridad">Pregunta sobre privacidad o seguridad</option>
+                <option value="Problema técnico o reporte de fallo">Problema técnico o reporte de fallo</option>
+                <option value="Otro motivo">Otro motivo</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Mensaje *</label>
+              <textarea id="contactMessage" name="message" class="form-textarea" placeholder="Escribe aquí tu consulta detallada..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" id="btnSubmitContact" style="width: 100%;">
+              <span>Enviar Mensaje</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+
+            <div class="contact-alert success" id="contactSuccess"></div>
+            <div class="contact-alert error" id="contactError"></div>
+          </form>
+
+          <div class="contact-direct-info">
+            <span>📧 Correo directo:</span>
+            <a href="mailto:nachocr26@gmail.com" style="color: var(--emerald-light); font-weight: 700;">nachocr26@gmail.com</a>
           </div>
         </div>
       </div>
@@ -622,7 +632,7 @@
           <li><a href="#caracteristicas">Características</a></li>
           <li><a href="#comparativa">Por qué P2P</a></li>
           <li><a href="#capturas">Galería Real</a></li>
-          <li><a href="#calculadora">Calculadora</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
 
@@ -640,9 +650,9 @@
         <h5>Legal & Ayuda</h5>
         <ul class="footer-links">
           <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+          <li><a href="https://github.com/nachocr26/Politica_privacidad/wiki/Politica-privacidad.html" target="_blank" rel="noopener noreferrer">Wiki Oficial (GitHub)</a></li>
           <li><a href="#faq">Preguntas Frecuentes</a></li>
-          <li><a href="https://github.com/nachocr26/famfinance" target="_blank" rel="noopener noreferrer">Código Fuente</a></li>
-          <li><a href="#descarga">Descarga Oficial</a></li>
+          <li><a href="mailto:nachocr26@gmail.com">nachocr26@gmail.com</a></li>
         </ul>
       </div>
     </div>
