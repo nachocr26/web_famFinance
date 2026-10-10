@@ -1,6 +1,6 @@
 /**
  * FamFinance P2P — Interactive Landing Page Script
- * Features: Dynamic Navbar, Screenshot Tabs, FAQ Accordion, Contact Form, Mobile Menu
+ * Features: Dynamic Navbar, Screenshot Tabs, FAQ Accordion, Direct Email Contact Form, Mobile Menu
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -63,50 +63,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Contact Form Handler (Envia email a nachocr26@gmail.com)
+  // 4. Contact Form Handler (Directo a nachocr26@gmail.com sin servicios caídos ni redirecciones)
   const contactForm = document.getElementById('contactForm');
   const contactSuccess = document.getElementById('contactSuccess');
-  const contactError = document.getElementById('contactError');
-  const btnSubmit = document.getElementById('btnSubmitContact');
+  const btnGmailWeb = document.getElementById('btnGmailWeb');
+
+  function getEmailPayload() {
+    const name = document.getElementById('contactName')?.value.trim() || 'Usuario';
+    const email = document.getElementById('contactEmail')?.value.trim() || '';
+    const subjectChoice = document.getElementById('contactSubject')?.value || 'Consulta FamFinance';
+    const message = document.getElementById('contactMessage')?.value.trim() || '';
+
+    const subject = `[FamFinance] ${subjectChoice} - ${name}`;
+    const body = `Hola Nacho,\n\n${message}\n\n---\nRemitente: ${name}\nCorreo de respuesta: ${email}`;
+
+    return { name, email, subject, body };
+  }
 
   if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
-      if (btnSubmit) {
-        btnSubmit.disabled = true;
-        btnSubmit.innerHTML = '<span>Enviando mensaje...</span>';
+      const { subject, body } = getEmailPayload();
+      const mailtoUrl = `mailto:nachocr26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Abre el cliente de correo del sistema (Gmail app, Mail, Thunderbird, etc.)
+      window.location.href = mailtoUrl;
+
+      if (contactSuccess) {
+        contactSuccess.style.display = 'block';
+        contactSuccess.innerHTML = `
+          <strong>✅ ¡Mensaje preparado!</strong> Se ha abierto tu aplicación de correo para enviar a <strong>nachocr26@gmail.com</strong>.<br />
+          <span style="font-size: 0.85rem; opacity: 0.9;">Si utilizas Gmail en el navegador web, pulsa en el botón <strong>"Abrir en Gmail Web"</strong> para enviar en 1 clic.</span>
+        `;
       }
+    });
+  }
 
-      const formData = new FormData(contactForm);
+  if (btnGmailWeb) {
+    btnGmailWeb.addEventListener('click', (e) => {
+      e.preventDefault();
+      const { subject, body } = getEmailPayload();
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=nachocr26@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      window.open(gmailUrl, '_blank');
 
-      try {
-        const response = await fetch('https://formsubmit.co/ajax/nachocr26@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json'
-          },
-          body: formData
-        });
-
-        if (response.ok) {
-          if (contactSuccess) {
-            contactSuccess.style.display = 'block';
-            contactSuccess.textContent = '¡Gracias por tu mensaje! Se ha enviado correctamente a nachocr26@gmail.com. Te responderé lo antes posible.';
-          }
-          if (contactError) contactError.style.display = 'none';
-          contactForm.reset();
-        } else {
-          throw new Error('Error en el servidor al enviar');
-        }
-      } catch (err) {
-        // En caso de fallo con AJAX, enviar por método tradicional directo
-        contactForm.submit();
-      } finally {
-        if (btnSubmit) {
-          btnSubmit.disabled = false;
-          btnSubmit.innerHTML = '<span>Enviar Mensaje</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>';
-        }
+      if (contactSuccess) {
+        contactSuccess.style.display = 'block';
+        contactSuccess.innerHTML = `<strong>✅ Pestaña de Gmail abierta.</strong> Puedes revisar y enviar tu mensaje directamente a <strong>nachocr26@gmail.com</strong>.`;
       }
     });
   }

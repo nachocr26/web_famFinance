@@ -954,6 +954,12 @@ section {
   color: #fff;
 }
 
+.contact-buttons-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .contact-alert {
   padding: 1.15rem 1.35rem;
   border-radius: var(--radius-md);
