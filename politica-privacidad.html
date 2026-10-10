@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — FamFinance P2P</title>
+  <meta name="description" content="Política de Privacidad oficial de FamFinance P2P. Gestión financiera familiar con arquitectura Zero-Server, cifrado de extremo a extremo y máxima privacidad." />
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 8rem 1.5rem 5rem 1.5rem;
+    }
+    .legal-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 3rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    .legal-card h1 {
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .legal-date {
+      color: var(--emerald-light);
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      display: inline-block;
+    }
+    .legal-section {
+      margin-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.5rem;
+    }
+    .legal-section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-white);
+    }
+    .legal-section p, .legal-section li {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+    .legal-section ul {
+      padding-left: 1.25rem;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--emerald-light);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-ambient-lights">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+  </div>
+
+  <div class="legal-container">
+    <a href="index.html" class="btn-back">← Volver a la página principal</a>
+    <div class="legal-card">
+      <div class="section-badge">Compromiso Ético 100% Zero-Server</div>
+      <h1>Política de Privacidad</h1>
+      <span class="legal-date">Última actualización: Octubre de 2026</span>
+
+      <p style="color: var(--text-primary); font-size: 1.05rem; margin-bottom: 1.5rem;">
+        En <strong>FamFinance P2P</strong>, la privacidad no es un añadido opcional; es el cimiento absoluto sobre el que está construida toda la arquitectura de la aplicación.
+      </p>
+
+      <div class="legal-section">
+        <h2>1. Principio Fundamental: Cero Servidores Centrales</h2>
+        <p>FamFinance P2P opera bajo una filosofía <strong>Local-First y Peer-to-Peer estricta</strong>. No disponemos de servidores centrales, bases de datos en la nube ni sistemas de recopilación de perfiles comerciales. Todos tus registros de gastos, ingresos, presupuestos y justificantes residen físicamente y de forma exclusiva en el almacenamiento interno de tus dispositivos.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>2. Cifrado de Extremo a Extremo (E2EE)</h2>
+        <p>Cualquier dato transmitido entre los dispositivos de tu familia se cifra previamente mediante criptografía militar <strong>AES-GCM de 256 bits</strong> con derivación de clave <strong>PBKDF2 (100.000 rondas con HMAC-SHA-256)</strong>. Ni los proveedores de telecomunicaciones ni los relevos de red pueden leer o interpretar el contenido de tus paquetes financieros.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>3. Sincronización en Red Local y Relays Nostr</h2>
+        <ul>
+          <li><strong>En casa (Wi-Fi):</strong> La sincronización se realiza mediante conexión directa móvil a móvil (WebRTC DataChannels) sin salir a internet.</li>
+          <li><strong>Fuera de casa (4G/5G):</strong> Se utilizan relays públicos descentralizados del protocolo Nostr mediante paquetes anónimos y cifrados con identificadores ciegos (SHA-256).</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>4. Detección de Notificaciones Bancarias (Android)</h2>
+        <p>El servicio de escucha de notificaciones opera íntegramente en local en tu dispositivo Android. Los textos de las notificaciones procesadas nunca se transmiten fuera de tu teléfono; únicamente se parsean en memoria para crear el apunte contable local correspondiente.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>5. Protocolo de Salida y Borrado a Cero (Zero-Wipe)</h2>
+        <p>Si un miembro decide abandonar el grupo familiar o el Titular revoca su acceso, se ejecuta de forma automática el protocolo de borrado completo de credenciales y base contable en el dispositivo revocado, devolviendo la app a su estado inicial independiente.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>6. Contacto y Transparencia</h2>
+        <p>FamFinance P2P es una herramienta pensada para devolver la soberanía financiera a los hogares. Si tienes dudas o sugerencias sobre la privacidad de la aplicación, puedes abrir una consulta en nuestro repositorio oficial.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

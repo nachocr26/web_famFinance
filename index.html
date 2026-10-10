@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FamFinance P2P — Tu dinero, tu familia, tus reglas | Finanzas Privadas Zero-Server</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="FamFinance P2P es la primera app española de finanzas colaborativas en tiempo real 100% privada. Sin servidores centrales, con cifrado AES-256 de extremo a extremo, sincronización por Wi-Fi y Nostr, y lectura automática de bancos y Bizum." />
+  <meta name="keywords" content="finanzas familiares, app gastos compartidos, finanzas privadas, p2p, zero-server, cifrado aes-256, bizum automatico, control de gastos parejas, finanzas sin nube" />
+  <meta name="author" content="FamFinance Team" />
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://famfinance.app/" />
+  <meta property="og:title" content="FamFinance P2P — La Revolución de la Economía Familiar Privada" />
+  <meta property="og:description" content="Gestiona los gastos de tu hogar en tiempo real con tu pareja o familia. 100% privado, sin servidores en la nube y con sincronización directa de móvil a móvil." />
+  <meta property="og:image" content="assets/banner.png" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FamFinance P2P — Tu Dinero, Tu Familia, Tus Reglas" />
+  <meta name="twitter:description" content="Finanzas colaborativas sin servidores centrales. Cifrado militar AES-256, lectura de Bizum y sincronización P2P." />
+  <meta name="twitter:image" content="assets/banner.png" />
+
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Ambient Animated Lighting -->
+  <div class="bg-ambient-lights" aria-hidden="true">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="bg-grid-overlay"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header>
+    <nav class="site-nav" id="siteNavbar">
+      <div class="container nav-container">
+        <a href="#inicio" class="brand-logo" id="navLogo">
+          <img src="assets/icon.png" alt="FamFinance Logo" class="logo-img" width="40" height="40" />
+          <span>FamFinance <span class="brand-badge">P2P</span></span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#caracteristicas" class="nav-link">Características</a></li>
+          <li><a href="#comparativa" class="nav-link">Por qué P2P</a></li>
+          <li><a href="#capturas" class="nav-link">Galería</a></li>
+          <li><a href="#calculadora" class="nav-link">Calculadora</a></li>
+          <li><a href="#seguridad" class="nav-link">Criptografía</a></li>
+          <li><a href="#faq" class="nav-link">Preguntas</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#descarga" class="btn-nav-cta" id="navCtaBtn">
+            <span>Descargar App</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="hero-pill-badge">Novedad</span>
+            <span>Arquitectura Local-First & Cero Servidores</span>
+          </div>
+
+          <h1 class="hero-title">
+            Tu dinero. Tu familia. <br />
+            <span class="gradient-text">Tus reglas.</span>
+          </h1>
+
+          <p class="hero-description">
+            La primera app colaborativa en tiempo real <strong>100% privada</strong>. Tus datos financieros viajan siempre con <strong>cifrado militar AES-256</strong> de móvil a móvil. Sin servidores en la nube que vigilen tus compras ni suscripciones mensuales abusivas.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#descarga" class="btn-primary" id="heroDownloadBtn">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.793 12 3.61 22.186a2.057 2.057 0 0 1-.61-1.46V3.274c0-.573.227-1.1.609-1.46zM15.207 13.414l2.42 2.42-12.756 7.378 10.336-9.798zm2.42-5.242l-2.42 2.42L4.871.794l12.756 7.378zM18.89 9.336l2.96 1.71a1.91 1.91 0 0 1 0 3.308l-2.96 1.71-2.18-2.18 2.18-2.548z"/></svg>
+              <span>Descargar en Google Play</span>
+            </a>
+            
+            <a href="#capturas" class="btn-secondary" id="heroDemoBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              <span>Ver Pantallas</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>0 €</h4>
+              <p>Servidores en la nube</p>
+            </div>
+            <div class="stat-item">
+              <h4>AES-256</h4>
+              <p>Cifrado E2EE Militar</p>
+            </div>
+            <div class="stat-item">
+              <h4>&lt; 5 ms</h4>
+              <p>Latencia P2P en Wi-Fi</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone Mockup Visual -->
+        <div class="hero-visual">
+          <div class="mockup-container">
+            <!-- Floating Notification Card 1 -->
+            <div class="floating-card card-top-left">
+              <div class="float-content">
+                <div class="float-icon emerald">⚡</div>
+                <div class="float-text">
+                  <strong>Bizum Detectado (+45,00 €)</strong>
+                  <span>Auto-categorizado en 0.2s</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Notification Card 2 -->
+            <div class="floating-card card-bottom-right">
+              <div class="float-content">
+                <div class="float-icon cyan">🛡️</div>
+                <div class="float-text">
+                  <strong>Sincronización P2P Directa</strong>
+                  <span>Sin intermediarios ni terceros</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="phone-frame">
+              <div class="phone-screen">
+                <img src="assets/screenshot-dashboard.jpg" alt="Captura del panel de control de FamFinance P2P" width="360" height="740" loading="eager" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON SECTION: TRADITIONAL VS P2P -->
+    <section class="comparison-section" id="comparativa">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge blue">Privacidad Sin Concesiones</div>
+          <h2 class="section-title">El dilema de la nube vs <span class="gradient-text">FamFinance P2P</span></h2>
+          <p class="section-subtitle">
+            ¿Por qué compartir tus extractos bancarios y los hábitos de tu familia con servidores desconocidos cuando puedes tener todo en tus propios dispositivos?
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <!-- Apps Tradicionales -->
+          <div class="compare-card danger">
+            <span class="compare-badge">Apps Tradicionales & Nube</span>
+            <h3 class="compare-title">Tus finanzas en manos de terceros</h3>
+            <p class="compare-desc">Exponen tu intimidad económica a fugas y suscripciones forzosas.</p>
+            
+            <ul class="compare-list">
+              <li>
+                <span class="icon-x">✕</span>
+                <span><strong>Servidores centrales vulnerables:</strong> Si sufren un ciberataque, tus transacciones quedan expuestas.</span>
+              </li>
+              <li>
+                <span class="icon-x">✕</span>
+                <span><strong>Perfilado comercial:</strong> Crean historiales de tus hábitos de consumo para vender estadísticas o publicidad agresiva.</span>
+              </li>
+              <li>
+                <span class="icon-x">✕</span>
+                <span><strong>Cuotas mensuales abusivas:</strong> Te exigen de 4 € a 10 € cada mes para compartir gastos en pareja.</span>
+              </li>
+              <li>
+                <span class="icon-x">✕</span>
+                <span><strong>Cero control si te das de baja:</strong> Tus datos permanecen en sus copias de seguridad de la nube indefinidamente.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- FamFinance P2P -->
+          <div class="compare-card success">
+            <span class="compare-badge">FamFinance P2P</span>
+            <h3 class="compare-title">Soberanía y secreto bancario total</h3>
+            <p class="compare-desc">Arquitectura Zero-Server: el dinero es tuyo y la privacidad también.</p>
+
+            <ul class="compare-list">
+              <li>
+                <span class="icon-check">✓</span>
+                <span><strong>Cero servidores corporativos:</strong> La información solo existe físicamente en los teléfonos de tu familia.</span>
+              </li>
+              <li>
+                <span class="icon-check">✓</span>
+                <span><strong>Bypass Wi-Fi Local (< 5 ms):</strong> En casa, los datos viajan directamente por el router sin salir a internet.</span>
+              </li>
+              <li>
+                <span class="icon-check">✓</span>
+                <span><strong>Red descentralizada Nostr (4G/5G):</strong> Fuera de casa, la sincronización viaja cifrada y anónima con NIP-78.</span>
+              </li>
+              <li>
+                <span class="icon-check">✓</span>
+                <span><strong>Sin suscripciones mensuales:</strong> Una herramienta ética y limpia diseñada para empoderar a los hogares.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES SHOWCASE -->
+    <section class="features-section" id="caracteristicas">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Tecnología de Vanguardia</div>
+          <h2 class="section-title">Diseñada para simplificar <span class="gradient-text">el día a día familiar</span></h2>
+          <p class="section-subtitle">
+            Combina la potencia de la automatización bancaria inteligente con el rigor criptográfico más avanzado del mercado.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <article class="feature-card">
+            <div class="feature-icon-box">🔄</div>
+            <h3>Sincronización P2P & Nostr</h3>
+            <p>Conexión directa móvil a móvil con WebRTC. Si sales a la calle, los relays abiertos de Nostr garantizan que la familia reciba los cambios sin depender de servidores centrales.</p>
+            <span class="feature-tag">Bypass LAN + Relays NIP-78</span>
+          </article>
+
+          <!-- Feature 2 -->
+          <article class="feature-card">
+            <div class="feature-icon-box cyan">🏦</div>
+            <h3>Captura Bancaria y Bizum</h3>
+            <p>Servicio nativo en Android que detecta en tiempo real compras y Bizums recibidos de BBVA, Santander, CaixaBank, ING, Revolut o Google Wallet con deduplicación inteligente.</p>
+            <span class="feature-tag">100% Automático en Android</span>
+          </article>
+
+          <!-- Feature 3 -->
+          <article class="feature-card">
+            <div class="feature-icon-box indigo">🕵️‍♂️</div>
+            <h3>Gastos Ocultos Temporales</h3>
+            <p>¿Vas a comprar el regalo de cumpleaños o aniversario de tu pareja? Oculta el gasto con fecha límite. Cifrado ciego: ¡el movimiento ni siquiera viaja a sus teléfonos hasta que se cumpla la fecha!</p>
+            <span class="feature-tag">Ideal para Sorpresas</span>
+          </article>
+
+          <!-- Feature 4 -->
+          <article class="feature-card">
+            <div class="feature-icon-box">🎙️</div>
+            <h3>Notas de Voz Inteligentes</h3>
+            <p>Di en voz alta <em>"Treinta euros en gasolina"</em> mientras conduces. La app analiza el audio localmente y crea el apunte con categoría y comercio sin que tengas que teclear nada.</p>
+            <span class="feature-tag">Dictado en 1 Toque</span>
+          </article>
+
+          <!-- Feature 5 -->
+          <article class="feature-card">
+            <div class="feature-icon-box cyan">🎯</div>
+            <h3>Huchas y Metas Colectivas</h3>
+            <p>Visualiza el progreso de objetivos familiares compartidos: vacaciones de verano, fondo de emergencia o la entrada del coche con porcentajes interactivos y aportaciones por miembro.</p>
+            <span class="feature-tag">Ahorro en Equipo</span>
+          </article>
+
+          <!-- Feature 6 -->
+          <article class="feature-card">
+            <div class="feature-icon-box indigo">🧾</div>
+            <h3>Tickets y Facturas PDF</h3>
+            <p>Haz una foto al ticket de compra antes de que se borre la tinta térmica o adjunta contratos y facturas en PDF con compresión ultra-ligera en el propio teléfono.</p>
+            <span class="feature-tag">Sin Pérdida de Papel</span>
+          </article>
+
+          <!-- Feature 7 -->
+          <article class="feature-card">
+            <div class="feature-icon-box">🚨</div>
+            <h3>Presupuestos Dinámicos</h3>
+            <p>Configura techos mensuales para supermercado, ocio o restaurantes. Recibe avisos preventivos al 80% y 100% para no llevarte sorpresas a fin de mes.</p>
+            <span class="feature-tag">Alertas Preventivas</span>
+          </article>
+
+          <!-- Feature 8 -->
+          <article class="feature-card">
+            <div class="feature-icon-box cyan">📊</div>
+            <h3>Informes Ejecutivos en PDF</h3>
+            <p>Genera en un solo clic informes mensuales maquetados para imprimir o archivar, exporta tus datos completos en CSV y crea copias de seguridad cifradas con contraseña personal.</p>
+            <span class="feature-tag">Exportación Libre</span>
+          </article>
+
+          <!-- Feature 9 -->
+          <article class="feature-card">
+            <div class="feature-icon-box indigo">🌍</div>
+            <h3>Multilingüe y Multidivisa</h3>
+            <p>Disponible en 6 idiomas nativos: Español, Inglés, Portugués, Catalán, Gallego y Vasco, con soporte para todas las monedas mundiales (€, $, £, etc.).</p>
+            <span class="feature-tag">Detección Automática</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREENSHOTS GALLERY -->
+    <section class="gallery-section" id="capturas">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge blue">Experiencia de Usuario</div>
+          <h2 class="section-title">Diseño limpio, ergonómico y <span class="gradient-text">ultrarrápido</span></h2>
+          <p class="section-subtitle">
+            Explora las pantallas reales de FamFinance P2P. Diseñada para usarse con una sola mano y ofrecer control absoluto en segundos.
+          </p>
+        </div>
+
+        <div class="tabs-container">
+          <button class="tab-btn active" data-target="viewDashboard">
+            <span>📊 Panel y Balance</span>
+          </button>
+          <button class="tab-btn" data-target="viewP2p">
+            <span>🔄 Sincronización P2P</span>
+          </button>
+          <button class="tab-btn" data-target="viewBanks">
+            <span>🛡️ Bancos y Seguridad</span>
+          </button>
+        </div>
+
+        <div class="gallery-display">
+          <!-- View 1: Dashboard -->
+          <div class="gallery-view active" id="viewDashboard">
+            <img src="assets/screenshot-dashboard.jpg" alt="Panel de control de FamFinance con balance, gastos ocultos y accesos rápidos" width="900" height="1800" loading="lazy" />
+            <div class="gallery-caption">
+              <div>
+                <h4>Dashboard Financiero en Tiempo Real</h4>
+                <p>Balance neto mensual, desglose de presupuestos, indicador de gastos ocultos y registro ágil.</p>
+              </div>
+              <span class="section-badge">Panel Principal</span>
+            </div>
+          </div>
+
+          <!-- View 2: P2P Sync -->
+          <div class="gallery-view" id="viewP2p">
+            <img src="assets/screenshot-p2p.jpg" alt="Pantalla de sincronización P2P con escaneo QR y estado de la red" width="900" height="1800" loading="lazy" />
+            <div class="gallery-caption">
+              <div>
+                <h4>Vínculo Familiar Instantáneo por Código QR</h4>
+                <p>Escanea el código del Titular para unirte a la red familiar en menos de 3 segundos sin crear cuentas.</p>
+              </div>
+              <span class="section-badge blue">Red P2P</span>
+            </div>
+          </div>
+
+          <!-- View 3: Banks & Security -->
+          <div class="gallery-view" id="viewBanks">
+            <img src="assets/screenshot-banks.jpg" alt="Ajustes de conexión bancaria, notificaciones automáticas y criptografía" width="900" height="1800" loading="lazy" />
+            <div class="gallery-caption">
+              <div>
+                <h4>Detección Bancaria con Máxima Privacidad</h4>
+                <p>Lectura de notificaciones de bancos españoles con deduplicación y consolidación de gasolineras.</p>
+              </div>
+              <span class="section-badge purple">Blindaje Local</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SAVINGS CALCULATOR -->
+    <section class="calculator-section" id="calculadora">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge purple">Simulador Interactivo</div>
+          <h2 class="section-title">¿Cuánto ahorra tu familia con <span class="gradient-text">FamFinance</span>?</h2>
+          <p class="section-subtitle">
+            Al tener visibilidad en tiempo real de los gastos comunes y presupuestos preventivos, los hogares eliminan el gasto fantasma y ahorran cientos de euros al año.
+          </p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="calc-grid">
+            <div class="calc-inputs">
+              <!-- Slider 1 -->
+              <div class="calc-control">
+                <div class="calc-label">
+                  <span>Gasto mensual aproximado del hogar:</span>
+                  <span id="budgetValue">2.400 €</span>
+                </div>
+                <input type="range" id="calcBudget" min="800" max="6000" step="100" value="2400" aria-label="Gasto mensual del hogar" />
+              </div>
+
+              <!-- Slider 2 -->
+              <div class="calc-control">
+                <div class="calc-label">
+                  <span>Miembros en la familia / hogar:</span>
+                  <span id="membersValue">3 personas</span>
+                </div>
+                <input type="range" id="calcMembers" min="1" max="6" step="1" value="3" aria-label="Miembros de la familia" />
+              </div>
+
+              <p style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">
+                * Basado en la optimización media del 8.5% en gastos no esenciales mediante presupuestos colaborativos activos y eliminación de cuotas de apps de suscripción.
+              </p>
+            </div>
+
+            <div class="calc-result-box">
+              <span class="calc-result-title">Ahorro anual neto estimado</span>
+              <div class="calc-big-number" id="calcResultAmount">2.448 €</div>
+              <p>Dinero que permanece en el bolsillo de tu hogar cada año.</p>
+
+              <div class="calc-badge-row">
+                <span class="calc-badge" id="calcSubsSaved">+60 € en suscripciones evitadas</span>
+                <span class="calc-badge" id="calcHoursSaved">54 horas/año ahorradas</span>
+                <span class="calc-badge">0 datos vendidos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="steps-section" id="como-funciona">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Configuración en 30 Segundos</div>
+          <h2 class="section-title">Tan fácil como escanear un <span class="gradient-text">código QR</span></h2>
+          <p class="section-subtitle">
+            Olvídate de crear usuarios, contraseñas, validar emails o vincular tarjetas de crédito.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-icon">📱</div>
+            <h3>Instala la App</h3>
+            <p>Descarga la app en el teléfono del Titular. Se crea una economía cifrada local en tu memoria interna de forma instantánea.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-icon">📷</div>
+            <h3>Escanea el QR</h3>
+            <p>Muestra tu código QR a tu pareja o familiares. Al escanearlo con su cámara, se realiza el apretón de manos criptográfico directo.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-icon">🚀</div>
+            <h3>¡Todo Listo!</h3>
+            <p>Cada compra, Bizum o nota de voz se refleja al instante en todos los dispositivos autorizados. Sin intermediarios.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CRYPTOGRAPHY & SECURITY -->
+    <section class="security-section" id="seguridad">
+      <div class="container">
+        <div class="security-banner">
+          <div style="text-align: center; max-width: 680px; margin: 0 auto;">
+            <div class="section-badge blue">Seguridad Inquebrantable</div>
+            <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">Blindaje Criptográfico de Grado Militar</h2>
+            <p style="color: var(--text-secondary); font-size: 1.05rem;">
+              En FamFinance P2P, tus números son secretos por diseño matemático, no por promesas comerciales.
+            </p>
+          </div>
+
+          <div class="security-grid">
+            <div class="sec-pill">
+              <h4>AES-GCM-256</h4>
+              <p>El estándar de cifrado simétrico más seguro del mundo, ejecutado en WebCrypto nativo.</p>
+            </div>
+
+            <div class="sec-pill">
+              <h4>PBKDF2 100k</h4>
+              <p>Derivación de clave con 100.000 iteraciones SHA-256 contra ataques de fuerza bruta.</p>
+            </div>
+
+            <div class="sec-pill">
+              <h4>WebRTC Directo</h4>
+              <p>Túneles punto a punto DTLS/SCTP con latencia de red local menor a 5 milisegundos.</p>
+            </div>
+
+            <div class="sec-pill">
+              <h4>Protocolo Zero-Wipe</h4>
+              <p>Si un miembro es revocado o abandona, su terminal destruye las claves y se limpia a cero.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge purple">Dudas Habituales</div>
+          <h2 class="section-title">Preguntas <span class="gradient-text">Frecuentes</span></h2>
+          <p class="section-subtitle">
+            Todo lo que necesitas saber sobre el funcionamiento y la privacidad de FamFinance P2P.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Mis datos financieros van a algún servidor de FamFinance?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Absolutamente no.</strong> FamFinance P2P no tiene servidor propio ni base de datos central en la nube. Tus datos se guardan exclusivamente en el almacenamiento físico de los teléfonos de tu familia. Ni siquiera los desarrolladores de la app tenemos forma de acceder o conocer tus gastos.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Qué ocurre cuando no estoy en casa con el Wi-Fi?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Cuando estás fuera de casa en 4G o 5G, la aplicación utiliza la red pública y descentralizada de relays de <strong>Nostr</strong> mediante eventos efímeros cifrados (NIP-78). Los paquetes viajan con un identificador ciego que nadie puede descifrar, y en cuanto vuelves a la red local se reactiva el bypass P2P directo.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Cómo funciona la lectura automática de compras y Bizum?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>En Android, FamFinance cuenta con un servicio nativo de escucha de notificaciones que procesa únicamente los mensajes emitidos por las aplicaciones bancarias españolas (BBVA, Santander, CaixaBank, ING, Revolut, etc.) y Google Wallet. Extrae el importe y el comercio en memoria local sin enviar nada a internet y deduplica cargos duplicados.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Para qué sirve la función de "Gastos Ocultos"?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Está diseñada para regalos o sorpresas familiares. Como Titular, puedes registrar una compra marcándola como oculta con una fecha límite (por ejemplo, el día del cumpleaños). Criptográficamente, el gasto se retiene y <strong>ni siquiera viaja</strong> a los teléfonos de los otros miembros hasta que se cumpla la fecha de revelación.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿Qué pasa si pierdo el teléfono o compro uno nuevo?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Al ser un sistema colaborativo, la base contable completa sigue residiendo en los teléfonos del resto de tu familia. Solo tienes que instalar la app en el nuevo teléfono y volver a vincularte por QR. Además, puedes generar en cualquier momento una copia de seguridad cifrada con tu propia contraseña personal.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span>¿La aplicación es gratuita?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Sí, la aplicación es completamente funcional y gratuita con todas sus capacidades colaborativas. Para quienes deseen apoyar el desarrollo, existe una versión FamFinance Pro de pago único (sin cuotas mensuales recurrentes) que retira la discreta publicidad para toda la familia de por vida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL DOWNLOAD CTA -->
+    <section class="cta-section" id="descarga">
+      <div class="container">
+        <div class="cta-box">
+          <div class="section-badge">Disponible Ahora</div>
+          <h2>Recupera el control de tus finanzas hoy mismo</h2>
+          <p>
+            Únete a los hogares que ya gestionan su economía sin ceder su privacidad a multinacionales. Descarga la aplicación y empieza a colaborar en tiempo real.
+          </p>
+
+          <div class="cta-buttons">
+            <a href="https://play.google.com/store/apps/details?id=com.famfinance.p2p" class="btn-primary" target="_blank" rel="noopener noreferrer">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.793 12 3.61 22.186a2.057 2.057 0 0 1-.61-1.46V3.274c0-.573.227-1.1.609-1.46zM15.207 13.414l2.42 2.42-12.756 7.378 10.336-9.798zm2.42-5.242l-2.42 2.42L4.871.794l12.756 7.378zM18.89 9.336l2.96 1.71a1.91 1.91 0 0 1 0 3.308l-2.96 1.71-2.18-2.18 2.18-2.548z"/></svg>
+              <span>Descargar en Google Play</span>
+            </a>
+
+            <button class="btn-secondary" onclick="window.copyShareLink()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              <span>Compartir con la Familia</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="brand-logo">
+          <img src="assets/icon.png" alt="FamFinance Logo" class="logo-img" width="34" height="34" />
+          <span>FamFinance <span class="brand-badge">P2P</span></span>
+        </a>
+        <p>
+          La solución ética y 100% privada para la economía colaborativa de hogares, parejas y familias. Arquitectura Local-First y Zero-Server.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navegación</h5>
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#caracteristicas">Características</a></li>
+          <li><a href="#comparativa">Por qué P2P</a></li>
+          <li><a href="#capturas">Galería</a></li>
+          <li><a href="#calculadora">Calculadora</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Tecnología</h5>
+        <ul class="footer-links">
+          <li><a href="#seguridad">Cifrado AES-256</a></li>
+          <li><a href="#seguridad">WebRTC DataChannels</a></li>
+          <li><a href="#seguridad">Relays Nostr NIP-78</a></li>
+          <li><a href="#seguridad">Protocolo Zero-Wipe</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Legal & Ayuda</h5>
+        <ul class="footer-links">
+          <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+          <li><a href="#faq">Preguntas Frecuentes</a></li>
+          <li><a href="https://github.com/nachocr26/famfinance" target="_blank" rel="noopener noreferrer">Código Fuente</a></li>
+          <li><a href="#descarga">Descarga Oficial</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>&copy; 2026 FamFinance P2P. Todos los derechos reservados. Desarrollado con privacidad por diseño.</p>
+      <p>🛡️ Zero-Server · E2EE · No Trackers</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
