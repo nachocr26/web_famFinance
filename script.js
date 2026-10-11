@@ -1,45 +1,69 @@
 /**
  * FamFinance P2P — Interactive Landing Page Script
- * Features: Dynamic Navbar, Screenshot Tabs, FAQ Accordion, Direct Email Contact Form, Mobile Menu
+ * Responsive Design, Smooth Scroll, Real Gallery Tabs, FAQ & Contact
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Sticky Navbar on Scroll
   const navbar = document.getElementById('siteNavbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
+  const handleScroll = () => {
+    if (window.scrollY > 25) {
       navbar?.classList.add('scrolled');
     } else {
       navbar?.classList.remove('scrolled');
     }
-  });
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
-  // 2. Mobile Menu Toggle
+  // 2. Mobile Menu Toggle with Animated Hamburger Icon
   const mobileToggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
-  if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      const isVisible = navLinks.style.display === 'flex';
-      navLinks.style.display = isVisible ? 'none' : 'flex';
-      if (!isVisible) {
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.right = '0';
-        navLinks.style.background = 'rgba(7, 10, 18, 0.98)';
-        navLinks.style.padding = '1.5rem';
-        navLinks.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+
+  const burgerSvg = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>';
+  const closeSvg = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+
+  const closeMobileMenu = () => {
+    navbar?.classList.remove('menu-open');
+    if (mobileToggle) {
+      mobileToggle.innerHTML = burgerSvg;
+      mobileToggle.setAttribute('aria-expanded', 'false');
+    }
+    document.body.classList.remove('no-scroll');
+  };
+
+  if (mobileToggle && navbar) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navbar.classList.toggle('menu-open');
+      mobileToggle.innerHTML = isOpen ? closeSvg : burgerSvg;
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (isOpen) {
+        document.body.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
       }
     });
 
-    // Close when clicking any link
-    navLinks.querySelectorAll('a').forEach(link => {
+    // Close on navigation link click
+    navLinks?.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          navLinks.style.display = 'none';
-        }
+        closeMobileMenu();
       });
+    });
+
+    // Close when clicking outside the navbar
+    document.addEventListener('click', (e) => {
+      if (navbar.classList.contains('menu-open') && !navbar.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navbar.classList.contains('menu-open')) {
+        closeMobileMenu();
+      }
     });
   }
 
@@ -63,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Contact Form Handler (Directo a nachocr26@gmail.com sin servicios caídos ni redirecciones)
+  // 4. Contact Form Handler (Directo a nachocr26@gmail.com)
   const contactForm = document.getElementById('contactForm');
   const contactSuccess = document.getElementById('contactSuccess');
   const btnGmailWeb = document.getElementById('btnGmailWeb');
@@ -86,14 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const { subject, body } = getEmailPayload();
       const mailtoUrl = `mailto:nachocr26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-      // Abre el cliente de correo del sistema (Gmail app, Mail, Thunderbird, etc.)
       window.location.href = mailtoUrl;
 
       if (contactSuccess) {
         contactSuccess.style.display = 'block';
         contactSuccess.innerHTML = `
-          <strong>✅ ¡Mensaje preparado!</strong> Se ha abierto tu aplicación de correo para enviar a <strong>nachocr26@gmail.com</strong>.<br />
-          <span style="font-size: 0.85rem; opacity: 0.9;">Si utilizas Gmail en el navegador web, pulsa en el botón <strong>"Abrir en Gmail Web"</strong> para enviar en 1 clic.</span>
+          <strong>✓ ¡Mensaje preparado!</strong> Se ha abierto tu cliente de correo para enviar a <strong>nachocr26@gmail.com</strong>.<br />
+          <span style="font-size: 0.85rem; opacity: 0.9;">Si utilizas Gmail en el navegador web, pulsa en el botón <strong>"Abrir en Gmail Web"</strong> para redactar en 1 clic.</span>
         `;
       }
     });
@@ -109,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (contactSuccess) {
         contactSuccess.style.display = 'block';
-        contactSuccess.innerHTML = `<strong>✅ Pestaña de Gmail abierta.</strong> Puedes revisar y enviar tu mensaje directamente a <strong>nachocr26@gmail.com</strong>.`;
+        contactSuccess.innerHTML = `<strong>✓ Pestaña de Gmail abierta.</strong> Puedes revisar y enviar tu mensaje directamente a <strong>nachocr26@gmail.com</strong>.`;
       }
     });
   }
@@ -121,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (questionBtn) {
       questionBtn.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-        // Close others
         faqItems.forEach(other => other.classList.remove('active'));
         if (!isActive) {
           item.classList.add('active');
@@ -133,10 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Copy Link Helper
   window.copyShareLink = function() {
     const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
-      alert('¡Enlace copiado al portapapeles!');
-    }).catch(() => {
-      prompt('Copia este enlace:', url);
-    });
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(() => {
+        alert('¡Enlace de FamFinance copiado al portapapeles!');
+      }).catch(() => {
+        prompt('Copia este enlace para compartir:', url);
+      });
+    } else {
+      prompt('Copia este enlace para compartir:', url);
+    }
   };
 });
