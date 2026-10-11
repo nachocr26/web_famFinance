@@ -8,7 +8,7 @@ Landing page oficial de **FamFinance P2P**, la primera aplicación española de 
 
 ## 🌟 Características Destacadas de la App
 
-- **Zero-Server & Local-First**: Todos los datos se guardan exclusivamente en los dispositivos físicos de la familia.
+- **Local-First & P2P**: Todos los datos se guardan exclusivamente en los dispositivos físicos de la familia.
 - **Cifrado Militar AES-256-GCM**: Cifrado E2EE con derivación PBKDF2 (100.000 rondas).
 - **Sincronización P2P en Wi-Fi (<5 ms)**: WebRTC DataChannels directos en red local.
 - **Relevo Descentralizado Nostr (4G/5G)**: Conexión fuera de casa mediante relays públicos y eventos efímeros NIP-78.
