@@ -1140,7 +1140,7 @@ section {
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease-out;
+  transition: max-height 0.4s ease-out;
   padding: 0 1.75rem;
   color: var(--text-secondary);
   font-size: 0.95rem;
@@ -1148,8 +1148,28 @@ section {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 250px;
+  max-height: 1500px;
   padding-bottom: 1.5rem;
+}
+
+.faq-answer p {
+  margin-bottom: 0.75rem;
+}
+
+.faq-answer ul {
+  padding-left: 1.35rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq-answer ul ul {
+  margin-top: 0.35rem;
+  margin-bottom: 0.35rem;
+  padding-left: 1.25rem;
+}
+
+.faq-answer li {
+  margin-bottom: 0.4rem;
 }
 
 /* ==========================================================================
