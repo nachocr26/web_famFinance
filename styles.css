@@ -1148,8 +1148,9 @@ section {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 1500px;
-  padding-bottom: 1.5rem;
+  max-height: none;
+  overflow: visible;
+  padding-bottom: 1.75rem;
 }
 
 .faq-answer p {

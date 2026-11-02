@@ -27,7 +27,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.2" />
+  <link rel="stylesheet" href="styles.css?v=2.4" />
+  <style>
+    /* Soporte garantizado de altura completa para FAQ sin dependencia de cache CSS */
+    .faq-item {
+      transition: all 0.3s ease !important;
+    }
+    .faq-item.active {
+      border-color: rgba(16, 185, 129, 0.45) !important;
+    }
+    .faq-item.active .faq-answer {
+      max-height: none !important;
+      overflow: visible !important;
+      padding-top: 0.25rem !important;
+      padding-bottom: 2rem !important;
+      display: block !important;
+    }
+    .faq-answer ul {
+      margin: 0.6rem 0 0.8rem 1.25rem !important;
+      padding-left: 0.5rem !important;
+    }
+    .faq-answer ul ul {
+      margin: 0.35rem 0 0.4rem 1.25rem !important;
+    }
+    .faq-answer li {
+      margin-bottom: 0.45rem !important;
+      line-height: 1.65 !important;
+    }
+    .faq-answer p {
+      margin-bottom: 0.75rem !important;
+      line-height: 1.7 !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -680,6 +711,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2.1"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 </html>

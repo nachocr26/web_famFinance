@@ -137,16 +137,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. FAQ Accordion
+  // 5. FAQ Accordion (Dynamic height & auto-expansion without clipping)
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const questionBtn = item.querySelector('.faq-question');
-    if (questionBtn) {
+    const answer = item.querySelector('.faq-answer');
+    if (questionBtn && answer) {
       questionBtn.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
-        faqItems.forEach(other => other.classList.remove('active'));
+        faqItems.forEach(other => {
+          other.classList.remove('active');
+          const otherAnswer = other.querySelector('.faq-answer');
+          if (otherAnswer) {
+            otherAnswer.style.maxHeight = null;
+            otherAnswer.style.overflow = 'hidden';
+          }
+        });
         if (!isActive) {
           item.classList.add('active');
+          answer.style.maxHeight = (answer.scrollHeight + 100) + 'px';
+          setTimeout(() => {
+            if (item.classList.contains('active')) {
+              answer.style.maxHeight = 'none';
+              answer.style.overflow = 'visible';
+            }
+          }, 420);
+        } else {
+          item.classList.remove('active');
+          answer.style.maxHeight = null;
+          answer.style.overflow = 'hidden';
         }
       });
     }
